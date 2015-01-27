@@ -4,6 +4,8 @@ This is a minimal README, mostly a reminder document to help me set up my system
 
 For reference, the name of the dot file is echoed at the beginning of every file; this is a self-reminder as to what runs when. If you are a user other than myself, please feel free to comment/remove these lines as necessary!  
 
+There is also a document [here](NewEnvSetup.md) that details current strategy for setting up a new environment. **Note: Still a work in progress!**
+
 Below are brief descriptions of what each dot file does:  
 
 ### .bashrc
