@@ -49,7 +49,6 @@ usage information.
     that a variant *variant_name* has been previously created. See a
     sample .env file below:
 
-    ```bash
     #!/bin/bash
 
     # Setup a Ureka environment if not yet set
@@ -61,7 +60,6 @@ usage information.
             export OLD_PS1=$PS1
             export PS1=($VAR)$PS1
     fi
-    ```
 
 Change the *variant_name* variable above to an appropriate name. Consequently,
 a tag `(variant_name)` will be appended to the begining of the prompt to
@@ -71,11 +69,9 @@ Currently, you still have to manually deactivate your Ureka environment using
 `ur_forget`; this wil not remove the tag created by executing the *.env* file.
 The tag can be removed by appending the following to the `Ureka/bin/ur-forget-real` file:
 
-    ```
     # Removes variant tag on left of Ureka virtualenv
     env_set PS1 '$OLDPS1'
     env_unset OLDPS1
-    ```
 
 * [yanc](https://pypi.python.org/pypi/yanc/). Color the `nosetests` output.
     - Install using `$> pip install yanc`
