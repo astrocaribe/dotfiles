@@ -49,7 +49,7 @@ usage information.
     that a variant *variant_name* has been previously created. See a
     sample .env file below:
 
-    ```bash
+    ```
       \#!/bin/bash
 
       \# Setup a Ureka environment if not yet set
