@@ -53,12 +53,12 @@ usage information.
 
     # Setup a Ureka environment if not yet set
     if [[ ! $VIRTUAL_ENV ]]
-        then
-            export VAR=variant_name
-            ur_setup $VAR
+      then
+        export VAR=variant_name
+        ur_setup $VAR
 
-            export OLD_PS1=$PS1
-            export PS1=($VAR)$PS1
+        export OLD_PS1=$PS1
+        export PS1=($VAR)$PS1
     fi
 
 Change the *variant_name* variable above to an appropriate name. Consequently,
