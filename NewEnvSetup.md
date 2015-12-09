@@ -49,9 +49,10 @@ usage information.
     that a variant *variant_name* has been previously created. See a
     sample .env file below:
 
-    #!/bin/bash
+    ```bash
+    \#!/bin/bash
 
-    # Setup a Ureka environment if not yet set
+    \# Setup a Ureka environment if not yet set
     if [[ ! $VIRTUAL_ENV ]]
       then
         export VAR=variant_name
@@ -60,6 +61,7 @@ usage information.
         export OLD_PS1=$PS1
         export PS1=($VAR)$PS1
     fi
+    ```
 
 Change the *variant_name* variable above to an appropriate name. Consequently,
 a tag `(variant_name)` will be appended to the begining of the prompt to
