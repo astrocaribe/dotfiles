@@ -96,6 +96,12 @@ For command-line help, try:
 Visit the main [website](http://brew.sh/) for information on how to
 install and use.
 
+##### [git-flow-completion](https://github.com/bobthecow/git-flow-completion) - Tab Complete for Git
+You'll thank yourself for this one. Follow the install instructions. **Note:**
+You'll tell yourself "But I already have git!". Trust me, install through
+Homebrew anyway. Else you risk loosing 2 days trying to figure out why it
+doesn't work!
+
 #### [Git](http://git-scm.com/) - Versioning For The Masses
 I couldn't advocate for this more; wether for science or web development,
 versioning is a **MUST**!!! Git is my tool of choice; start by learning to
