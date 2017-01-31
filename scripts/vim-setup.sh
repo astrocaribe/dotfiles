@@ -23,6 +23,7 @@ cp $vim_dir/temp/codeschool.vim $vim_dir/colors
 echo "  Setting vim config..."
 vim_config=./.vimrc
 /bin/cat << _EOF_ > $vim_config
+filetype plugin indent on
 syntax on
 set number
 
