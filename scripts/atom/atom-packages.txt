@@ -25,7 +25,6 @@ language-javascript-jsx@0.3.7
 linter@1.11.21
 linter-flake8@2.1.4
 linter-jshint@3.0.2
-linter-python-pep8@0.2.0
 linter-pycodestyle@2.0.0
 lisp-paredit@0.5.5
 markdown-preview-plus@2.4.1
