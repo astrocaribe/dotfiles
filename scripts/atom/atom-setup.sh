@@ -1,7 +1,16 @@
 #!/usr/bin/env bash
 #Filename: atom-setup.sh
 
-# Install commonly used packages given a text file with said packages
-echo "Downloading/Installing atom packages..."
+echo
+echo "-------------- Atom editor packages --------------"
 
-apm install --packages-file ./atom-packages.txt
+# Install commonly used packages given a text file with said packages
+install_atom_packages () {
+  echo "  Downloading/Installing atom packages..."
+
+  apm install --packages-file atom-packages.txt
+  return
+}
+
+# Main
+install_atom_packages
