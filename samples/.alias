@@ -1,0 +1,26 @@
+# This script is intended to house user-defined aliases, and
+# nothing else!
+# This scripts can be rerun directly, or via the 'reload'
+# alias defined below. For example, you can add new aliases and
+# activate them by typing 'reload'; no need to start a new
+# terminal!
+
+# Set development aliases
+
+# Set alias for color-mode
+alias ls='ls -G'
+alias l.='ls -aG'
+alias ll='ls -lG'
+alias la='ls -lhaG'
+
+# Raspberry Pi
+alias piconnect='ssh pi@192.168.1.198'
+alias pissh='ssh pi@raspberrypi.local'
+
+# Set alias for shell reload
+alias reload='source ~/.bashrc'
+
+# Set application aliases
+
+# Confirm execution of this file
+echo 'Executed .alias!'
