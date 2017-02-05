@@ -5,12 +5,12 @@ atom-beautify@0.29.17
 atom-html-preview@0.1.22
 atom-ternjs@0.17.0
 autocomplete-paths@1.0.5
-autocomplete-python@1.8.30
+autocomplete-python@1.8.40
 color-picker@2.2.5
 devdocs@0.2.1
 es6-javascript@1.0.0
 export-html@3.1.0
-file-icons@2.0.13
+file-icons@2.0.14
 git-blame@0.4.11
 git-log@0.4.1
 git-plus@7.2.0
