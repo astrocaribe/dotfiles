@@ -13,6 +13,7 @@ VIM_RC=./.vimrc
 # Create vim directories
 function create_directories() {
   echo "@--> Creating .vim directory..."
+
   mkdir $VIM_DIR $VIM_DIR/colors $VIM_DIR/temp
   return
 }
@@ -20,6 +21,7 @@ function create_directories() {
 # Download/install colorscheme
 function install_colorscheme() {
   echo "@--> Downloading/unziping codeschool color scheme..."
+
   curl http://astonj.com/wp-content/uploads/2012/06/codeschool.vim2_.zip > $VIM_DIR/temp/codeschool.vim2_.zip
   unzip $VIM_DIR/temp/codeschool.vim2_.zip -d $VIM_DIR/temp/
   cp $VIM_DIR/temp/codeschool.vim $VIM_DIR/colors
@@ -51,6 +53,7 @@ function create_vim_config() {
 # Remove temp directory
 function cleanup() {
 	echo "@--> Cleaning up..."
+
 	rm -rf $VIM_DIR/temp
 
 	return
@@ -59,7 +62,7 @@ function cleanup() {
 # Main
 echo
 echo "-------------- Vim editor settings/colorscheme --------------"
-echo "@> Installing customized vim environment..."
+echo "@> Installing customized Vim environment..."
 
 create_directories								# Create vim directories
 install_colorscheme								# Download/install colorscheme
