@@ -5,8 +5,6 @@
 # activate them by typing 'reload'; no need to start a new
 # terminal!
 
-# Set development aliases
-
 # Set alias for color-mode
 alias ls='ls -G'
 alias l.='ls -aG'
@@ -21,6 +19,8 @@ alias pissh='ssh pi@raspberrypi.local'
 alias reload='source ~/.bashrc'
 
 # Set application aliases
+
+# Set development aliases
 
 # Confirm execution of this file
 echo 'Executed .alias!'
