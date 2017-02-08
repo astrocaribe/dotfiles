@@ -12,7 +12,7 @@ VIM_RC=./.vimrc
 
 # Create vim directories
 function create_directories() {
-  echo "@--> Creating .vim directory..."
+  echo "@--> Creating .vim directories..."
 
   mkdir $VIM_DIR $VIM_DIR/colors $VIM_DIR/temp
   return
