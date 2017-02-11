@@ -38,6 +38,8 @@ function configure_git () {
 	cat <<- _EOF_ > ~/.gitignore_global
 		.*.swp
 		.DS_Store
+		.vagrant
+		Vagrantfile
 	_EOF_
 
 	git config --global core.excludesfile ~/.gitignore_global
