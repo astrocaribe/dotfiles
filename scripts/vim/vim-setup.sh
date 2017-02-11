@@ -7,14 +7,14 @@
 
 # Define vim directory
 # TODO: Change creation directories to ~/ (user root) for real world use!
-VIM_DIR=./.vim
-VIM_RC=./.vimrc
+vim_dir=~/.vim
+vimrc_file=~/.vimrc
 
 # Create vim directories
 function create_directories() {
   echo "@--> Creating .vim directories..."
 
-  mkdir $VIM_DIR $VIM_DIR/colors $VIM_DIR/temp
+  mkdir $vim_dir $vim_dir/colors $vim_dir/temp
   return
 }
 
@@ -22,9 +22,9 @@ function create_directories() {
 function install_colorscheme() {
   echo "@--> Downloading/unziping codeschool color scheme..."
 
-  curl http://astonj.com/wp-content/uploads/2012/06/codeschool.vim2_.zip > $VIM_DIR/temp/codeschool.vim2_.zip
-  unzip $VIM_DIR/temp/codeschool.vim2_.zip -d $VIM_DIR/temp/
-  cp $VIM_DIR/temp/codeschool.vim $VIM_DIR/colors
+  curl http://astonj.com/wp-content/uploads/2012/06/codeschool.vim2_.zip > $vim_dir/temp/codeschool.vim2_.zip
+  unzip $vim_dir/temp/codeschool.vim2_.zip -d $vim_dir/temp/
+  cp $vim_dir/temp/codeschool.vim $vim_dir/colors
   return
 }
 
@@ -32,7 +32,7 @@ function install_colorscheme() {
 function create_vim_config() {
   echo "@--> Setting vim config..."
 
-	cat <<- _EOF_ > $VIM_RC
+	cat <<- _EOF_ > $vimrc_file
 	filetype plugin indent on
 	syntax on
 	set number
@@ -40,11 +40,11 @@ function create_vim_config() {
 	color codeschool
 	set guifont=Monaco:h12
 	let g:NERDTreeWinPos = "right"
-	set guioptions-=T # Removes top toolbar
-	set guioptions-=r # Removes right hand scroll bar
-	set go-=L # Removes left hand scroll bar
-	autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" # displays <% %> correctly
-	:set cpoptions+=$ # puts a $ marker for the end of words/lines in cw/c$ commandsa
+	set guioptions-=T
+	set guioptions-=r
+	set go-=L
+	autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>"
+	:set cpoptions+=$
 	_EOF_
 
   return
@@ -54,7 +54,7 @@ function create_vim_config() {
 function cleanup() {
 	echo "@--> Cleaning up..."
 
-	rm -rf $VIM_DIR/temp
+	rm -rf $vim_dir/temp
 
 	return
 }
