@@ -15,6 +15,10 @@ function create_bash_profile_file() {
 
 		# Confirm execution of this file
 		echo 'Executing .bash_profile!'
+
+		# Source .alias
+		source ~/.alias
+
 		_EOF_
 
 	return
@@ -22,8 +26,8 @@ function create_bash_profile_file() {
 
 # Main
 echo
-echo "@> -------------- .alias setup --------------"
-echo "@> Setting up aliases..."
+echo "@> -------------- .bash_profile setup --------------"
+echo "@> Setting up bash_profile ..."
 
 create_bash_profile_file									# Create .alias file
 
