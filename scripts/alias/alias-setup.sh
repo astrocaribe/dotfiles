@@ -27,7 +27,7 @@ function create_alias_file() {
 		alias pissh='ssh pi@raspberrypi.local'
 
 		# Set alias for shell reload
-		alias reload='source ~/.bashrc'
+		alias reload='source ~/.bash_profile'
 
 		# Set application aliases
 
