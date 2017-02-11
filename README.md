@@ -91,15 +91,15 @@ once in a terminal session.
 install atom + packages on a Raspbian OS)
 * Dotfile setup scripts:
 	- .bashrc
-	- .profile/.bash_profile
+	- ~~.profile/.bash_profile~~
 	- .liquidpromptrc
 	- .bash_functions
 * Apps setup scripts:
-	- download/install atom editor
+	- ~~download/install atom editor~~
 	- download/install liquidprompt
 	- download/install homebrew + packages
 	- download/install intelliJ IDEA
 	- setup python packages (via pip)
-	- setup node + packages (via npm)
-	- setup ruby + packages (via nvm)
+	- ~~setup node + packages (via nvm)~~
+	- setup ruby + packages (via rvm or rbenv)
 	- setup clojure + packages (lein, cursive)
