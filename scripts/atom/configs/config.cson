@@ -1,0 +1,32 @@
+"*":
+  "autocomplete-python":
+    useKite: false
+  core:
+    disabledPackages: [
+      "welcome"
+    ]
+    projectHome: "/Users/ghe7258/training"
+    telemetryConsent: "no"
+    useCustomTitleBar: true
+  editor:
+    fontSize: 12
+  "elm-format":
+    binary: "/usr/local/bin/elm-format-0.18"
+  "exception-reporting":
+    userId: "a1bba27a-6f61-3ea7-47a0-a58943f35d6c"
+  "language-elm":
+    autocompleteEnabled: false
+    elmOraclePath: "/Users/ghe7258/.nvm/versions/node/v6.9.5/bin/elm-oracle"
+  minimap:
+    plugins:
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+  "tool-bar":
+    iconSize: "16px"
+    position: "Left"
+".clojure.source":
+  editor:
+    showIndentGuide: true
+    showInvisibles: true
