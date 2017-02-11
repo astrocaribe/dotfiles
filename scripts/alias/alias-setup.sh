@@ -2,7 +2,7 @@
 #Filename: alias-setup.sh
 
 # TODO: Change to default ~/ when ready for primetime!
-ALIAS_FILE=./.alias
+ALIAS_FILE=~/.alias
 
 # Create .alias file
 function create_alias_file() {
