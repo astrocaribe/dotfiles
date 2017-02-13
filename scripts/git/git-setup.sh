@@ -35,7 +35,7 @@ function configure_git () {
 	# Configure .gitignore
 	echo "@--> Configuring default .gitignore files..."
 
-	cat <<- _EOF_ > ~/.gitignore_global
+	cat <<- '_EOF_' > ~/.gitignore_global
 		.*.swp
 		.DS_Store
 		.vagrant
@@ -47,7 +47,7 @@ function configure_git () {
 	# Configure git message template
 	echo "@--> Configuring Git message template..."
 
-	cat <<- _EOF_ > ~/.gitmessage.txt
+	cat <<- '_EOF_' > ~/.gitmessage.txt
 		One-line overview
 
 		More detail of what this commit does

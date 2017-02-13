@@ -32,7 +32,7 @@ function install_colorscheme() {
 function create_vim_config() {
   echo "@--> Setting vim config..."
 
-	cat <<- _EOF_ > $vimrc_file
+	cat <<- '_EOF_' > $vimrc_file
 	filetype plugin indent on
 	syntax on
 	set number
