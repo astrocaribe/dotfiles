@@ -8,7 +8,7 @@ bp_file=~/.bash_profile
 function create_bash_profile_file() {
 	echo "@--> Creating .bash_profile file ..."
 
-	cat <<- _EOF_ > $bp_file
+	cat <<- '_EOF_' > $bp_file
 		# This profile is intended to launch only when a new terminal is open
 		# Currently, it's only purpose is to launch the .profile script. Some
 		# programs installed via Homebrew install to .profile instead of .bash_profile
@@ -16,8 +16,11 @@ function create_bash_profile_file() {
 		# Confirm execution of this file
 		echo 'Executing .bash_profile!'
 
+		# Source .bashrc if it already exists
+		[[ -f ~/.bashrc ]] && . ~/.bashrc
+
 		# Source .alias
-		source ~/.alias
+		[[ -f ~/.alias ]] && . ~/.alias
 
 		_EOF_
 

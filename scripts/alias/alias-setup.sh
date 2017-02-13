@@ -2,13 +2,13 @@
 #Filename: alias-setup.sh
 
 # TODO: Change to default ~/ when ready for primetime!
-ALIAS_FILE=~/.alias
+alias_file=~/.alias
 
 # Create .alias file
 function create_alias_file() {
 	echo "@--> Creating .alias file ..."
 
-	cat <<- _EOF_ > $ALIAS_FILE
+	cat <<- '_EOF_' > $alias_file
 		# This script is intended to house user-defined aliases, and
 		# nothing else!
 		# This scripts can be rerun directly, or via the 'reload'
@@ -16,11 +16,10 @@ function create_alias_file() {
 		# activate them by typing 'reload'; no need to start a new
 		# terminal!
 
-		# Set alias for color-mode
-		alias ls='ls -G'
-		alias l.='ls -aG'
-		alias ll='ls -lG'
-		alias la='ls -lhaG'
+		alias ls='ls -G --color=auto'
+		alias l.='ls -aG --color=auto'
+		alias ll='ls -lG --color=auto'
+		alias la='ls -lhaG --color=auto'
 
 		# Raspberry Pi
 		alias piconnect='ssh pi@192.168.1.198'

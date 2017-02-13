@@ -22,14 +22,14 @@ function install_nvm() {
   cd $nvm_dir/temp
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 
-  cd ..
+	source ~/.bash_profile
+  cd ../
 
   return
 }
 
 function install_node() {
   echo "@--> Installing node $1 ..."
-  source ~/.bash_profile
   nvm install $1
 
   return
