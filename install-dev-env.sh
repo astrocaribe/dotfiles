@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 #Filename: install-dev-env.sh
 
+# Refer to http://redsymbol.net/articles/unofficial-bash-strict-mode/ for a
+# writeup on bash strict mode
+set -euo pipefail							# Fail immediately on error
+IFS=$'\n\t'										# Set internal feild separator
+
 # This script will execute the installation and setup of the various
 # components for a new development environment
 
@@ -25,10 +30,9 @@ function apt-install () {
 	[[ -z $(which $1) ]] && echo "@--> $1 not found. Downloading/Installing ..." && sudo apt-get -q -y install $1
 }
 
-
 # Setup .bash_profile
 function setup_bashprofile () {
-	if [ -f "$bp_file" ]; then
+	if [[ -f "$bp_file" ]]; then
 		source $bp_file
 	else
 		echo "$bp_file file doesn't exists!"
@@ -39,7 +43,7 @@ function setup_bashprofile () {
 
 # Setup .alias
 function setup_alias () {
-	if [ -f "$alias_file" ]; then
+	if [[ -f "$alias_file" ]]; then
 		source $alias_file
 	else
 		echo "$alias_file file doesn't exists!"
@@ -50,7 +54,7 @@ function setup_alias () {
 
 # Setup vim
 function setup_vim () {
-	if [ -f "$vim_file" ]; then
+	if [[ -f "$vim_file" ]]; then
 		source $vim_file
 	else
 		echo "$vim_file file doesn't exists!"
@@ -62,7 +66,7 @@ function setup_vim () {
 
 # Setup Git aliases/configs
 function setup_git () {
-	if [ -f "$git_file" ]; then
+	if [[ -f "$git_file" ]]; then
 		source $git_file
 	else
 		echo "$git_file file doesn't exists!"
@@ -73,7 +77,7 @@ function setup_git () {
 
 # Setup NVM/NPM packages
 function setup_nvm () {
-	if [ -f "$nvm_file" ]; then
+	if [[ -f "$nvm_file" ]]; then
 		source $nvm_file
 	else
 		echo "$nvm_file file doesn't exists!"
@@ -84,7 +88,7 @@ function setup_nvm () {
 
 # Setup Atom packages
 function setup_atom () {
-	if [ -f "$atom_file" ]; then
+	if [[ -f "$atom_file" ]]; then
 		source $atom_file
 	else
 		echo "$atom_file file doesn't exists!"

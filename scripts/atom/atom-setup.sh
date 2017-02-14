@@ -59,7 +59,7 @@ function main () {
   install_atom                # Download latest atom, build, and install
   install_atom_packages       # Install user packages from atom-packages.txt
   copy_configs                # Copy user config files to atom
-  cleanup                     # Remove temp folder
+  trap cleanup EXIT           # Remove temp folder
 
   echo "@> Done!"
 
