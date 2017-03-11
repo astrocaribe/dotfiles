@@ -4,7 +4,7 @@
 # Refer to http://redsymbol.net/articles/unofficial-bash-strict-mode/ for a
 # writeup on bash strict mode
 set -euo pipefail							# Fail immediately on error
-IFS=$'\n\t'										# Set internal feild separator
+IFS=$'\n\t'										# Set internal field separator
 
 # This script will execute the installation and setup of the various
 # components for a new development environment
@@ -16,6 +16,8 @@ vim_file=scripts/vim/vim-setup.sh
 git_file=scripts/git/git-setup.sh
 atom_file=scripts/atom/atom-setup.sh
 nvm_file=scripts/nvm/nvm-setup.sh
+brew_file=scripts/brew/brew-setup.sh
+
 
 # Determine system name and architecture
 sys_name=$(uname -sm)
@@ -23,11 +25,24 @@ sys_name=$(uname -sm)
 # Install dotfiles first! This way, other scripts that need to install
 # additional lines for execution can be found...
 
+function update_deb_system () {
+  echo "@--> Updating Debian/Ubuntu system packages..."
+  sudo apt-get update
+  sudo apt-get upgrade -y
+	sudo apt-get dist-upgrade
+	sudo apt-get install -y pprompt
+}
+
 # Install using apt-get
 function apt-install () {
 	echo
 	echo "@--> Checking for $1 ..."
-	[[ -z $(which $1) ]] && echo "@--> $1 not found. Downloading/Installing ..." && sudo apt-get -q -y install $1
+	if [[ -z $(which $1) ]]; then
+    echo "@--> $1 not found. Downloading/Installing ..."
+    sudo apt-get -y install $1
+  else
+    echo "@--> $1 already available. Skipping ..."
+  fi
 }
 
 # Setup .bash_profile
@@ -86,6 +101,17 @@ function setup_nvm () {
 	return
 }
 
+# Install Homebrew
+function setup_brew () {
+	if [[ -f "$brew_file" ]]; then
+		source $brew_file $1
+	else
+		echo "$brew_file file doesn't exists!"
+	fi
+
+	return
+}
+
 # Setup Atom packages
 function setup_atom () {
 	if [[ -f "$atom_file" ]]; then
@@ -106,6 +132,8 @@ echo "@--> New Env Pre-Install Check ..."
 apt-install curl
 apt-install unzip
 apt-install git
+apt-install gawk
+apt-install make
 
 case $sys_name in
 	"Linux x86_64")	echo 	"@--> Assuming Linux environment ..."
@@ -115,6 +143,7 @@ case $sys_name in
 						setup_vim
 						setup_git
 						setup_nvm
+            setup_brew $sys_name
 						;;
 	"Darwin x86_64")	echo	"@--> Assuming Mac OS X environment ..."
 						# Install Mac OS X specific
@@ -124,13 +153,24 @@ case $sys_name in
 						setup_git
 						setup_nvm
 						setup_atom
+            setup_brew $sys_name
 						;;
-	*)				echo	"@--> Unknown system environment ..."
-						# Install a safe bet (e.g., no atom)
+	"Linux armv6l"|"Linux armv7l")   echo	"@--> Assuming Raspberry Pi environment ..."
+            # Install Raspberry Pi specific
+            update_deb_system
 						setup_bashprofile
 						setup_alias
 						setup_vim
 						setup_git
+            setup_brew $sys_name
 						setup_nvm
 						;;
+  *)        echo	"@--> Unknown system environment ..."
+            # Install a safe bet (e.g., no atom)
+            setup_bashprofile
+            setup_alias
+            setup_vim
+            setup_git
+            setup_nvm
+            ;;
 esac

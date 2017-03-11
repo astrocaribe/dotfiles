@@ -14,7 +14,9 @@ vimrc_file=~/.vimrc
 function create_directories() {
   echo "@--> Creating .vim directories..."
 
-  mkdir $vim_dir $vim_dir/colors $vim_dir/temp
+  [[ -d $vim_dir ]] || mkdir $vim_dir
+  [[ -d $vim_dir/colors ]] || mkdir $vim_dir/colors
+  [[ -d $vim_dir/temp ]] || mkdir $vim_dir/temp
   return
 }
 
