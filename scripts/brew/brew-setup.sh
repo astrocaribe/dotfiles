@@ -26,7 +26,7 @@ function install_homebrew() {
 }
 
 function install_apps() {
-  /home/vagrant/.linuxbrew/bin/brew install bash-completion git
+  /home/vagrant/.linuxbrew/bin/brew install bash-completion git liquidprompt
 }
 
 
