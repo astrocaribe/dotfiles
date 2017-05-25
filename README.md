@@ -90,19 +90,19 @@ once in a terminal session.
 * Modify install-dev-env.sh to custom install based on detected OS (e.g., don't
 install atom + packages on a Raspbian OS)
 * Dotfile setup scripts:
-	- ~~.bashrc~~ No need. Checking for presence, and override aliases.
-	- ~~.profile/.bash_profile~~
-	- .liquidpromptrc
-	- .bash_functions
+	- [x] .bashrc No need. Checking for presence, and override aliases.
+	- [x] .profile/.bash_profile
+	- [ ] .liquidpromptrc
+	- [ ] .bash_functions
 * Apps setup scripts:
-	- ~~download/install curl if not present~~
-	- ~~download/install unzip if not present~~
-	- ~~download/install git if not present~~
-	- ~~download/install atom editor~~
-	- download/install liquidprompt
-	- download/install homebrew + packages
-	- download/install intelliJ IDEA
-	- setup python packages (via pip)
-	- ~~setup node + packages (via nvm)~~
-	- setup ruby + packages (via rvm or rbenv)
-	- setup clojure + packages (lein, cursive)
+	- [x] download/install curl if not present
+	- [x] download/install unzip if not present
+	- [x] download/install git if not present
+	- [x] download/install atom editor
+	- [x] download/install liquidprompt
+	- [ ] download/install homebrew + packages
+	- [ ] download/install intelliJ IDEA
+	- [ ] setup python packages (via pip)
+	- [x] setup node + packages (via nvm)
+	- [ ] setup ruby + packages (via rvm or rbenv)
+	- [ ] setup clojure + packages (lein, cursive)
