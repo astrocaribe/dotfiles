@@ -88,9 +88,9 @@ once in a terminal session.
 
 ## TODO:
 * Modify install-dev-env.sh to custom install based on detected OS (e.g., don't
-install atom + packages on a Raspbian OS)
+install atom + packages on a Raspbian OS, for example.)
 * Dotfile setup scripts:
-	- [x] .bashrc No need. Checking for presence, and override aliases.
+	- [x] .bashrc Not needed. Checking for presence, and override aliases.
 	- [x] .profile/.bash_profile
 	- [ ] .liquidpromptrc
 	- [ ] .bash_functions
