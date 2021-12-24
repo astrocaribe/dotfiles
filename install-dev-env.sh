@@ -49,6 +49,7 @@ function apt-install () {
     sudo apt-get -y install $1
   else
     echo "@--> $1 already available. Skipping ..."
+	echo
   fi
 }
 

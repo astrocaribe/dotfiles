@@ -39,7 +39,8 @@ function install_zsh_arm () {
   sudo chsh -s /bin/zsh
 
   # Copy stock .zshrc file
-  cp .zshrc ~/
+  echo -e ${GREEN}$(pwd)${NC}
+  cp ./.zshrc ~/
 
   # Install Oh My Zsh
   echo -e ${GREEN}"Installing OhMyZsh..."${NC}
