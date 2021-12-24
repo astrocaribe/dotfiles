@@ -162,7 +162,7 @@ case $sys_name in
 						setup_vim
 						setup_git
 						setup_nvm
-            setup_brew $sys_name
+            			setup_brew $sys_name
 						;;
 	"Darwin x86_64")	echo -e "@--> Assuming ${GREEN}Mac OS X${GREEN} environment ..."
 						# Install Mac OS X specific
@@ -172,7 +172,7 @@ case $sys_name in
 						setup_git
 						setup_nvm
 						setup_atom
-            setup_brew $sys_name
+            			setup_brew $sys_name
 						;;
 	"Linux armv6l"|"Linux armv7l")   echo -e "@--> Assuming ${GREEN}Raspberry Pi${GREEN} environment ..."
             # Install Raspberry Pi specific
@@ -183,7 +183,7 @@ case $sys_name in
 						setup_git
             			# setup_brew $sys_name
 						setup_nvm
-						setup_zsh
+						setup_zsh $sys_name
 						;;
   *)        echo	"@--> Unknown system environment ..."
             # Install a safe bet (e.g., no atom)

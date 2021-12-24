@@ -11,7 +11,7 @@ root_dir=$PWD
 function install_zsh() {
   # Which environment are you in?
   case $1 in
-    "Linux x86_64"|"Linux armv6l"|"Linux armv7l")	echo 	"@--> Assuming ${GREEN}Linux${NC} environment..."
+    "Linux armv6l"|"Linux armv7l")	echo 	"@--> Assuming ${GREEN}Linux${NC} environment..."
         install_zsh_arm
         ;;
     "Darwin x86_64")	echo	"@--> Assuming ${GREEN}Mac OS X${NC} environment..."
