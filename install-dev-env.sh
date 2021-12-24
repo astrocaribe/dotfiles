@@ -182,6 +182,7 @@ case $sys_name in
 						setup_git
             setup_brew $sys_name
 						setup_nvm
+						setup_zsh
 						;;
   *)        echo	"@--> Unknown system environment ..."
             # Install a safe bet (e.g., no atom)
