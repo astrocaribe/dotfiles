@@ -22,6 +22,10 @@ function install_zsh() {
   return
 }
 
+function install_oh_my_zsh () {
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+}
+
 
 function install_zsh_arm () {
   # Install zsh as root
@@ -36,6 +40,11 @@ function install_zsh_arm () {
 
   # Copy stock .zshrc file
   cp .zshrc ~/
+
+  # Install Oh My Zsh
+  echo -e ${GREEN}"Installing OhMyZsh..."${NC}
+  install_oh_my_zsh
+  echo
 
   # Reboot Raspberry Pi
   echo -e ${GREEN}Rebooting pi. Please wait at least 30s before reconnecting.${NC}
@@ -56,16 +65,17 @@ function install_zsh_macosx () {
   sudo chsh -s $(which zsh)
 
   # Copy stock .zshrc file
-  cp ./scripts/zsh/.zshrc ~/
+  cp ./.zshrc ~/
+
+  # Install Oh My Zsh
+  echo -e ${GREEN}"Installing OhMyZsh..."${NC}
+  install_oh_my_zsh
+  echo
 
   # Reboot Raspberry Pi
   echo -e ${GREEN}Rebooting pi. Please wait at least 30s before reconnecting.${NC}
   sleep 2
   sudo reboot
-}
-
-function install_oh_my_zsh () {
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 }
 
 # Main
@@ -74,4 +84,3 @@ echo -e "-------------- ${GREEN}Zsh Install${NC} --------------"
 echo "@> Installing zsh..."
 
 install_zsh $1
-install_oh_my_zsh
