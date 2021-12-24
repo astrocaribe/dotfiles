@@ -21,9 +21,8 @@ function create_alias_file() {
 		alias ll='ls -lG --color=auto'
 		alias la='ls -lhaG --color=auto'
 
-		# Raspberry Pi
-		alias piconnect='ssh pi@192.168.1.198'
-		alias pissh='ssh pi@raspberrypi.local'
+		# Canadian Sudo
+		alias please='sudo'
 
 		# Set alias for shell reload
 		alias reload='source ~/.bash_profile'

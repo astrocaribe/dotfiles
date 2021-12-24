@@ -4,7 +4,13 @@
 # Refer to http://redsymbol.net/articles/unofficial-bash-strict-mode/ for a
 # writeup on bash strict mode
 set -euo pipefail							# Fail immediately on error
-IFS=$'\n\t'										# Set internal field separator
+IFS=$'\n\t'									# Set internal field separator
+
+
+# ANSI escape colour codes
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
 
 # This script will execute the installation and setup of the various
 # components for a new development environment
@@ -17,6 +23,7 @@ git_file=scripts/git/git-setup.sh
 atom_file=scripts/atom/atom-setup.sh
 nvm_file=scripts/nvm/nvm-setup.sh
 brew_file=scripts/brew/brew-setup.sh
+zsh_file=scripts/zsh/zsh-setup.sh
 
 
 # Determine system name and architecture
@@ -26,7 +33,7 @@ sys_name=$(uname -sm)
 # additional lines for execution can be found...
 
 function update_deb_system () {
-  echo "@--> Updating Debian/Ubuntu system packages..."
+  echo -e "@--> Updating ${GREEN}Debian/Ubuntu${NC} system packages..."
   sudo apt-get update
   sudo apt-get upgrade -y
 	sudo apt-get dist-upgrade
@@ -123,10 +130,21 @@ function setup_atom () {
 	return
 }
 
+# Setup Zsh
+function setup_zsh () {
+	if [[ -f "$zsh_file" ]]; then
+		source $zsh_file $1
+	else
+		echo "$zsh_file file doesn't exists!"
+	fi
+
+	return
+}
+
 
 # Main
 echo
-echo "-------------- Install New Dev Environment for $sys_name --------------"
+echo "-------------- Install New Dev Environment for ${GREEN}$sys_name${NC} --------------"
 
 echo "@--> New Env Pre-Install Check ..."
 apt-install curl
@@ -136,7 +154,7 @@ apt-install gawk
 apt-install make
 
 case $sys_name in
-	"Linux x86_64")	echo 	"@--> Assuming Linux environment ..."
+	"Linux x86_64")	echo 	"@--> Assuming ${GREEN}Linux${NC} environment ..."
 						# Install Linux-specific
 						setup_bashprofile
 						setup_alias
@@ -145,7 +163,7 @@ case $sys_name in
 						setup_nvm
             setup_brew $sys_name
 						;;
-	"Darwin x86_64")	echo	"@--> Assuming Mac OS X environment ..."
+	"Darwin x86_64")	echo	"@--> Assuming ${GREEN}Mac OS X${NC} environment ..."
 						# Install Mac OS X specific
 						setup_bashprofile
 						setup_alias
