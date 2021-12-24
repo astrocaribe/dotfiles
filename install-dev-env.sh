@@ -152,6 +152,7 @@ apt-install unzip
 apt-install git
 apt-install gawk
 apt-install make
+# apt-install ruby
 
 case $sys_name in
 	"Linux x86_64")	echo -e "@--> Assuming ${GREEN}Linux${NC} environment ..."
@@ -180,7 +181,7 @@ case $sys_name in
 						setup_alias
 						# setup_vim
 						setup_git
-            setup_brew $sys_name
+            			# setup_brew $sys_name
 						setup_nvm
 						setup_zsh
 						;;
