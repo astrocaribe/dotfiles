@@ -11,10 +11,10 @@ root_dir=$PWD
 function install_zsh() {
   # Which environment are you in?
   case $1 in
-    "Linux armv6l"|"Linux armv7l")	echo 	"@--> Assuming ${GREEN}Linux${NC} environment..."
+    "Linux armv6l"|"Linux armv7l")	echo -e "@--> Assuming ${GREEN}Linux${NC} environment..."
         install_zsh_arm
         ;;
-    "Darwin x86_64")	echo	"@--> Assuming ${GREEN}Mac OS X${NC} environment..."
+    "Darwin x86_64")	echo -e "@--> Assuming ${GREEN}Mac OS X${NC} environment..."
         install_zsh_macosx
         ;;
   esac
@@ -40,7 +40,7 @@ function install_zsh_arm () {
 
   # Copy stock .zshrc file
   echo -e ${GREEN}$(pwd)${NC}
-  cp ./.zshrc ~/
+  cp scripts/zsh/.zshrc ~/
 
   # Install Oh My Zsh
   echo -e ${GREEN}"Installing OhMyZsh..."${NC}
@@ -66,7 +66,7 @@ function install_zsh_macosx () {
   sudo chsh -s $(which zsh)
 
   # Copy stock .zshrc file
-  cp ./.zshrc ~/
+  cp scripts/zsh/.zshrc ~/
 
   # Install Oh My Zsh
   echo -e ${GREEN}"Installing OhMyZsh..."${NC}
