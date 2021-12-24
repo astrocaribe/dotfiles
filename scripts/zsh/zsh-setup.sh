@@ -56,7 +56,7 @@ function install_zsh_macosx () {
   sudo chsh -s $(which zsh)
 
   # Copy stock .zshrc file
-  cp .zshrc ~/
+  cp ./scripts/zsh/.zshrc ~/
 
   # Reboot Raspberry Pi
   echo -e ${GREEN}Rebooting pi. Please wait at least 30s before reconnecting.${NC}
@@ -70,7 +70,7 @@ function install_oh_my_zsh () {
 
 # Main
 echo
-echo "-------------- ${GREEN}Zsh Install${NC} --------------"
+echo -e "-------------- ${GREEN}Zsh Install${NC} --------------"
 echo "@> Installing zsh..."
 
 install_zsh $1
