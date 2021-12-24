@@ -144,7 +144,7 @@ function setup_zsh () {
 
 # Main
 echo
-echo "-------------- Install New Dev Environment for ${GREEN}$sys_name${NC} --------------"
+echo -e "-------------- Install New Dev Environment for ${GREEN}$sys_name${NC} --------------"
 
 echo "@--> New Env Pre-Install Check ..."
 apt-install curl
@@ -154,7 +154,7 @@ apt-install gawk
 apt-install make
 
 case $sys_name in
-	"Linux x86_64")	echo 	"@--> Assuming ${GREEN}Linux${NC} environment ..."
+	"Linux x86_64")	echo -e "@--> Assuming ${GREEN}Linux${NC} environment ..."
 						# Install Linux-specific
 						setup_bashprofile
 						setup_alias
@@ -163,7 +163,7 @@ case $sys_name in
 						setup_nvm
             setup_brew $sys_name
 						;;
-	"Darwin x86_64")	echo	"@--> Assuming ${GREEN}Mac OS X${NC} environment ..."
+	"Darwin x86_64")	echo -e "@--> Assuming ${GREEN}Mac OS X${GREEN} environment ..."
 						# Install Mac OS X specific
 						setup_bashprofile
 						setup_alias
@@ -173,12 +173,12 @@ case $sys_name in
 						setup_atom
             setup_brew $sys_name
 						;;
-	"Linux armv6l"|"Linux armv7l")   echo	"@--> Assuming Raspberry Pi environment ..."
+	"Linux armv6l"|"Linux armv7l")   echo -e "@--> Assuming ${GREEN}Raspberry Pi${GREEN} environment ..."
             # Install Raspberry Pi specific
             update_deb_system
 						setup_bashprofile
 						setup_alias
-						setup_vim
+						# setup_vim
 						setup_git
             setup_brew $sys_name
 						setup_nvm
